@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "51l3nt",
+  "risk": "3",
+  "title": "The reward contract of the stability pool (Absorber) can run malicious code",
+  "issueId": 5,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/5"
+}
