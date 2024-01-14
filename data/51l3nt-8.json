@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "51l3nt",
+  "risk": "2",
+  "title": "Count of troves is never decremented when close_trove() is called",
+  "issueId": 8,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/8"
+}
