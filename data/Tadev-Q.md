@@ -1,0 +1,1 @@
+## [NC‑01] `ref self: ContractState` should be modified to `self: @ContractState` in multiple functions which do not write into contract storage.
