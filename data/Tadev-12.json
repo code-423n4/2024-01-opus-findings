@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "Tadev",
+  "risk": "2",
+  "title": "'update_rates' function in Shrine contract will not work as expected if it is called 2 times in the same interval.",
+  "issueId": 12,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/12"
+}
