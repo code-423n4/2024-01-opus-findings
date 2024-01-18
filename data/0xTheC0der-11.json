@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "0xTheC0der",
+  "risk": "2",
+  "title": "Unhealthy troves with LTV > 90% cannot always be absorbed as intended",
+  "issueId": 11,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/11"
+}
