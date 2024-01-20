@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "0xTheC0der",
+  "risk": "2",
+  "title": "Forced price updates can lead to price discontinuity and absorption DoS",
+  "issueId": 13,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/13"
+}
