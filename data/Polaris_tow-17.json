@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "Polaris_tow",
+  "risk": "2",
+  "title": "The flash_mint implementation does not comply with the ERC-3156 standard",
+  "issueId": 17,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/17"
+}
