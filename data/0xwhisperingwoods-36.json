@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "0xwhisperingwoods",
+  "risk": "2",
+  "title": "Liquidation processes does not prioritize lowest LTV assets, which can lead to a lower health factor",
+  "issueId": 36,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/36"
+}
