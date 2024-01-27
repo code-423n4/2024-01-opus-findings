@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "0xwhisperingwoods",
+  "risk": "3",
+  "title": "A Reentrancy attack in `mod sentinel::add_yang` could allow a user to drain `yang` balance",
+  "issueId": 35,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/35"
+}
