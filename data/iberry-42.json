@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "iberry",
+  "risk": "3",
+  "title": "Missing access control role  \"absorber_roles::UPDATE\" Initialization  in absorber.cairo Contract",
+  "issueId": 42,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/42"
+}
