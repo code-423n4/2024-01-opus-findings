@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "nmirchev8",
+  "risk": "3",
+  "title": "Flashloan manipulation can force shrine to enter `recovery_mode` and liquidate participants",
+  "issueId": 43,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/43"
+}
