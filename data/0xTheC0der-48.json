@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "0xTheC0der",
+  "risk": "3",
+  "title": "Collateral cannot be withdrawn from trove once yang is suspended",
+  "issueId": 48,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/48"
+}
