@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "farahanwealth",
+  "risk": "2",
+  "title": "AccessControlPublic struct or remove the #[abi(embed_v0)] attribute if it is not necessary. ",
+  "issueId": 52,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/52"
+}
