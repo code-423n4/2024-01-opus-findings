@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "Inspectah",
+  "risk": "2",
+  "title": "Success validation for ERC20 transfers missing",
+  "issueId": 60,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/60"
+}
