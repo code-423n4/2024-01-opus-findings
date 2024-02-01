@@ -93,7 +93,7 @@
 
 ## Project Description
 ### **Opus Protocol**
-Opus Protocol is a cross-margin autonomous credit protocol that offers dynamic loan management based on each user's collateral profile. The whole diagram for the smart contracts is: ![image](https://4180423341-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FBTWxg1bdHQ15qxTg6SOE%2Fuploads%2FfsrC6vc3McLsuAx73WsC%2FOpus%20Architecture-Interactions.png?alt=media&token=0b6a66d4-4715-4c5d-8ea9-0eab8a90d99f)
+Opus Protocol is a cross-margin autonomous credit protocol that offers dynamic loan management based on each user's collateral profile. The whole diagram for the smart contracts is here. All the diagrams in this report are from Opus Official Doc: ![image](https://4180423341-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FBTWxg1bdHQ15qxTg6SOE%2Fuploads%2FfsrC6vc3McLsuAx73WsC%2FOpus%20Architecture-Interactions.png?alt=media&token=0b6a66d4-4715-4c5d-8ea9-0eab8a90d99f)
 
 Key features and highlights:
 - **Dynamic Interest Rates**: Interest rates adjust based on market conditions.
@@ -160,10 +160,12 @@ The contract includes several components for access control and reentrancy prote
 
 - **Liquidate**: Allows the caller to use their own yin to pay down the debt of an unhealthy trove, receiving the trove's collateral and a liquidation penalty as a reward.
 
+The diagram comes from the Opus Official doc
 ![image](https://4180423341-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FBTWxg1bdHQ15qxTg6SOE%2Fuploads%2FIdXrRIxIRAOmECG9FEvJ%2Fimage.png?alt=media&token=50fc8413-1ad8-442c-a0f6-d575ed8574c4)
 
 - **Absorb**: Facilitates the use of the Absorber's yin for liquidation, with the Absorber receiving the collateral and penalty, and the caller compensated for initiating the process.
 
+The diagram comes from the Opus Official doc
 ![image](https://4180423341-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FBTWxg1bdHQ15qxTg6SOE%2Fuploads%2FtegWQDFczQlw7VNfYEW1%2Fimage.png?alt=media&token=cfcce67c-6004-488e-9b4b-72699d1a0ba8)
 
 
@@ -405,6 +407,7 @@ The Caretaker module is designed to manage the protocol's deprecation, especiall
 #### Shutdown Mechanism
 
 The execution of the `shut` function marks the beginning of the protocol's orderly deprecation. All debts within troves become irreparable, and the necessary collateral to back the total forged debt is moved to the Caretaker. This system-wide redistribution effectively finalizes each trove's collateral position, aligning it with the protocol's overall liquidity state at the time of shutdown.
+The diagram comes from the Opus Official doc.
 ![image](https://4180423341-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FBTWxg1bdHQ15qxTg6SOE%2Fuploads%2FRPkcCXm8GXcXKDQdx4Vn%2Fimage.png?alt=media&token=c57bf1bd-ee0f-4a1d-9313-45a2f02205ca)
 
 #### Redeeming Yin for Collateral
@@ -491,6 +494,8 @@ The protocol relies on an honest admin for the integrity of its access control m
 
 ## Final Thoughts
 Overall, the Opus Protocol's smart contract suite is well-organized, featuring distinct components that handle specific aspects of the protocol logic. The autonomous nature of adjustments in response to market conditions shows significant promise for decentralized finance. To enhance trust and protocol resilience, a movement towards decentralized governance structures is recommended, coupled with the implementation of a fallback oracle system for improved data reliability.
+
+
 
 
 
