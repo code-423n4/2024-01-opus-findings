@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "ABAIKUNANBAEV",
+  "risk": "2",
+  "title": "Multiplier is incorrectly calculated in `Controller`",
+  "issueId": 75,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/75"
+}
