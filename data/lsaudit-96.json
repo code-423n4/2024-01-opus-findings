@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "It's possible to repay a specified amount of synthetic even when Shrine is killed",
+  "issueId": 96,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/96"
+}
