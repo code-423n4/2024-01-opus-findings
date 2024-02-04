@@ -49,3 +49,21 @@ starknet = "2.4.0"
 ```
 Recommendation:
 Consider using the latest version `2.5.3` of the `starknet` package to update the Cairo compiler version.
+
+## [L-3] decimals is OPTIONAL for ERC20 tokens.
+There are 4 instances of this
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/transmuter.cairo#L564
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/transmuter.cairo#L544
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/gate.cairo#L196
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/gate.cairo#L214
+
+
+decimals is not part of ERC20 specifications. However this codebase assumes every ERC20 implements the `decimals` state variable and function
+- [EIP20 spec](https://eips.ethereum.org/EIPS/eip-20) 
+
+Impact:
+Transactions will revert for ERC20 tokens that do not implement `decimals` property and function because it OPTIONAL according to the specification.
+
+
+Recommendation:
+Consider getting `decimals` in a try catch block or manually ensure every token that will be used implements the function.
