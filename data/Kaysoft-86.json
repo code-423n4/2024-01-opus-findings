@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "Kaysoft",
+  "risk": "2",
+  "title": "WBTC and ETH can not be deposited because ` transfer_from(...)`  function signature is used while the tokens only have `` transferFrom(...)`  functions. ",
+  "issueId": 86,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/86"
+}
