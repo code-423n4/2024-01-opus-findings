@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "It's possible to add or update a reward when Absorber is not live",
+  "issueId": 87,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/87"
+}
