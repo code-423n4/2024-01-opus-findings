@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "Jeiwan",
+  "risk": "2",
+  "title": "Liquidated troves are over-penalized when their threshold is less than the minimal one",
+  "issueId": 78,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/78"
+}
