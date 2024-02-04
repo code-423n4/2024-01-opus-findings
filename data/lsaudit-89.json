@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "Protection from the first depositor front running attack is not correctly implemented",
+  "issueId": 89,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/89"
+}
