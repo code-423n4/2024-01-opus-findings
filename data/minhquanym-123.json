@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "minhquanym",
+  "risk": "2",
+  "title": "ERC777 reentrancy allows attacker to drain reward in Absorber",
+  "issueId": 123,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/123"
+}
