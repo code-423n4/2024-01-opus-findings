@@ -100,3 +100,49 @@ Loss of asset when the transfer of an asset returns false.
 
 Recommendation:
 Consider checking the return values of the token `transfer(...)` to ensure assets are successfully transferred.
+
+
+## [L-5] Using only snake-case ERC20 functions would render the contracts unusable on starknet mainnet because top ERC20 still use Camelcase naming.
+
+There are 5 instances of this.
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/transmuter.cairo#L581
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/gate.cairo#L231
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/caretaker.cairo#L180
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/transmuter.cairo#L351
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/gate.cairo#L145
+
+ERC20 token on the codebase is done with the assumption that ERC20 tokens on the starknet mainnet used the Rust-like snake-case functions. 
+
+However most top tokens on the Starknet mainnet including the WBTC, ETH and WstETh tokens use the Camelcase naming.
+
+This will make the integrations done with `.balance_of(...)` and `transfer_from(...)` revert because those functions are not present in the WBTC, Eth and WstEth tokens.
+
+an example is in the gate.enter(...) function.
+```
+//@audit WBtc does not have transfer_from function but transferFrom
+File: gate.cairo
+let success: bool = self.asset.read().transfer_from(user, get_contract_address(), asset_amt.into());
+```
+
+Another example is in the transmuter.cairo for pulling ERC20 asset
+
+```
+File: transmuter.cairo
+//@audit WBtc does not have transfer_from function but transferFrom
+351: let success: bool = self.asset.read().transfer_from(user, get_contract_address(), asset_amt.into());
+``` 
+
+One more example is getting the balance of an asset in transmuter.cairo
+
+```
+File: transmuter.cairo
+//@audit WBtc does not have balance_of function but balanceOf
+let asset_balance: u128 = asset.balance_of(get_contract_address()).try_into().unwrap();
+```
+
+Impact:
+Most functions will revert and be unusable because of the assumption that the tokens implemented snake-cased balance_of and transfer_from.
+
+
+Recommendation:
+Consider implementing both snake-case and camel case integration for interoperability. The convention used by each token can be saved along with each trove data.
