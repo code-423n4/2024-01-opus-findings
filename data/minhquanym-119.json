@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "minhquanym",
+  "risk": "3",
+  "title": "When `redistribute_helper()` skip over a zero yang, `new_yang_totals` was not appended cause wrong update for trove yang balances",
+  "issueId": 119,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/119"
+}
