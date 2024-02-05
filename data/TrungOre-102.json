@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "TrungOre",
+  "risk": "3",
+  "title": "Function `compound()` should take the redistribution event into account when calculating the debt after interest charged ",
+  "issueId": 102,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/102"
+}
