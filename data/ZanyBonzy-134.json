@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "ZanyBonzy",
+  "risk": "2",
+  "title": " Return value of yin transfer not checked during yin allocation",
+  "issueId": 134,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/134"
+}
