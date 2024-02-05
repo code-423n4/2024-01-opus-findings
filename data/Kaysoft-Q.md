@@ -67,3 +67,36 @@ Transactions will revert for ERC20 tokens that do not implement `decimals` prope
 
 Recommendation:
 Consider getting `decimals` in a try catch block or manually ensure every token that will be used implements the function.
+
+## [L-4] Return value of ERC20 `transfer(...)` not checked.
+
+There are 4 instances of these
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/transmuter.cairo#L407
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/transmuter.cairo#L448
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/transmuter.cairo#L482
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/absorber.cairo#L882
+
+
+From the ERC20 interface, the `transfer(...)` returns a boolean that indicates the success of the token transfer. 
+
+However the project does not check the return value of transfer of asset to ensure it returns true.
+
+An example is in the sweep function of transmuter.cairo below.
+```
+File: transmuter.cairo
+417: fn settle(ref self: ContractState) {
+     ...
+        //@audit return value not checked
+448: @> asset.transfer(receiver, asset.balance_of(transmuter));
+449:
+450:            // Emit event
+451:            self.emit(Settle { deficit: total_transmuted })
+452:        }
+```
+
+Impact:
+Loss of asset when the transfer of an asset returns false.
+
+
+Recommendation:
+Consider checking the return values of the token `transfer(...)` to ensure assets are successfully transferred.
