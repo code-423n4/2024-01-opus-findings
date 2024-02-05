@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "zzzitron",
+  "risk": "3",
+  "title": "Debt from a liquidated trove may not be redistributed due to an issue inside the function `shrine.redistribute_helper()`",
+  "issueId": 106,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/106"
+}
