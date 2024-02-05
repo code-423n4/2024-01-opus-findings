@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "minhquanym",
+  "risk": "3",
+  "title": "The `withdraw_helper()` function incorrectly updates `new_trove_balance` because it uses `trove_balance` before calling the `charge()` function",
+  "issueId": 118,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/118"
+}
