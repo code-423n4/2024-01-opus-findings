@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "minhquanym",
+  "risk": "3",
+  "title": "The `provide()` function does not reset withdrawal requests, allowing an attacker to bypass risk-free yield tactics protection",
+  "issueId": 116,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/116"
+}
