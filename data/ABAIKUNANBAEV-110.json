@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "ABAIKUNANBAEV",
+  "risk": "3",
+  "title": "Rewards are incorrectly calculated in `Absorber` if the epoch changes",
+  "issueId": 110,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/110"
+}
