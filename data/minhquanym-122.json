@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "minhquanym",
+  "risk": "2",
+  "title": "Duplicated recipients can override `percentages[recipient]` and lead to incorrect allocation",
+  "issueId": 122,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/122"
+}
