@@ -136,22 +136,7 @@ Whenever `amount` is set to `0`, the state of the contract won't be changed. Dep
 Verify if the `amount > 0` whenever calling either `deposit` or `withdraw`.
 
 
-# [8] Emits should emit both old and new values
-
-**File:** `shrine.cairo`
-
-[File: core/shrine.cairo](https://github.com/code-423n4/2024-01-opus/blob/main/src/core/shrine.cairo#L793)
-```cairo
-793:         fn update_yin_spot_price(ref self: ContractState, new_price: Wad) {
-794:             self.access_control.assert_has_role(shrine_roles::UPDATE_YIN_SPOT_PRICE);
-795:             self.emit(YinPriceUpdated { old_price: self.yin_spot_price.read(), new_price });  
-796:             self.yin_spot_price.write(new_price);
-797:         }
-```
-
-Function `update_yin_spot_price` updates the spot price of yin. While the price is updated, it's a good practice to emit both previous and new (updated) value. Event `YinPriceUpdated` emits only the new spot price value.
-
-# [9] Check `forge_amount` value in `open_trove()` in `abbot.cairo`
+# [8] Check `forge_amount` value in `open_trove()` in `abbot.cairo`
 
 **Files:** `abbot.cairo`, `shrine.cairo`
 
@@ -195,7 +180,7 @@ In function `open_trove` (`abbot.cairo`), call `self.shrine.read().forge(user, n
 In function `forge` (`shrine.cairo`), do not perform any action when `amount` is not greater than `0`.
 
 
-# [10] `new_trove_id` in `abbot.cairo` can be declared earlier
+# [9] `new_trove_id` in `abbot.cairo` can be declared earlier
 
 **File:** `abbot.cairo`
 
@@ -229,7 +214,7 @@ Since line `137` sets `troves_count` as `troves_count + 1`, which is basically t
 ```
 
 
-# [11] Function `unsuspend_yang` can be called even when Yang is not suspended
+# [10] Function `unsuspend_yang` can be called even when Yang is not suspended
 
 **File:** `shrine.cairo`
 
@@ -251,7 +236,7 @@ Function `unsuspend_yang()` checks only if status is not `YangSuspensionStatus::
 It's possible to call `unsuspend_yang()` even when it's not suspended (its status is `YangSuspensionStatus::None`). Calling `unsuspend_yang()` when Yang is not suspended still emits an `YangUnsuspended` event. This might be very misleading to the end-user. Make sure to fully verify the `self.get_yang_suspension_status(yang)` and do not allow to call `unsuspend_yang` when it is not suspended.
 
 
-# [12] Emit both old and new values
+# [11] Emit both old and new values
 
 **Files:** `shrine.cairo`, `controller.cairo`
 
@@ -328,7 +313,7 @@ Similar issues exist in the below instances. Functions emits only the new (updat
 
 
 
-# [13] Functions which update the value do not verify if the value was really changed
+# [12] Functions which update the value do not verify if the value was really changed
 
 **Files:** `shrine.cairo`, `controller.cairo`
 
@@ -416,7 +401,7 @@ The same issue occurs in multiple of instances:
 ```
 
 
-# [14] Lack of `address(0)` check in constructor
+# [13] Lack of `address(0)` check in constructor
 
 **Files:** `absorber.cairo`, `equalizer.cairo`, `caretaker.cairo`, `gate.cairo`, `purger.cairo`, `controller.cairo`, `abbot.cairo`, `flash_mint.cairo`
 
@@ -490,7 +475,7 @@ The same issue occurs in multiple of instances:
 147:         self.seer.write(ISeerDispatcher { contract_address: seer });
 ```
 
-# [15] Incorrect documentation
+# [14] Incorrect documentation
 
 ***File:*** `shrine.cairo`
 
@@ -508,7 +493,7 @@ As demonstrated above, function `inject()` cannot be called when Shrine is kille
 
 Our recommendation is to update the documentation - please add `inject()` function to the list of functions which cannot be called when the Shrine is killed.
 
-# [16] Incorrect punctuation
+# [15] Incorrect punctuation
 
 According to American style guides, `i.e.` should be followed by commna: `i.e.,`. The comma is missed in the below instances:
 
@@ -538,7 +523,7 @@ However, according to British style guids, `i.e.` should not be followed by comm
 
 Our recommendation is to stick to one style of punctuation in abbreviations.
 
-# [17] Typos
+# [16] Typos
 
 [File: absorber.cairo](https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/absorber.cairo#L434)
 ```
