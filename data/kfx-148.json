@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "kfx",
+  "risk": "2",
+  "title": "Griefing: if pending forge transaction can be observed and frontrun, DoS can be created by a whale attacker who forges all available yin",
+  "issueId": 148,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/148"
+}
