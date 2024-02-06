@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The initial deposit for adding a new Yang is not returned when the Yang is removed later. This means the depositor loses those funds permanently if the Yang is removed.",
+  "issueId": 215,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/215"
+}
