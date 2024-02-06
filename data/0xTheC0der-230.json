@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "0xTheC0der",
+  "risk": "2",
+  "title": "Protocol continues to operate with stale price data price leading to losses through arbitraging",
+  "issueId": 230,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/230"
+}
