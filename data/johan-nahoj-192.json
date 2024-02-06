@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "johan-nahoj",
+  "risk": "2",
+  "title": "yang Pair ID Validation Flaw for Tokens with Zero Decimal Values",
+  "issueId": 192,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/192"
+}
