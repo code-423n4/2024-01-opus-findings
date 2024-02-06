@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "CodeWasp",
+  "risk": "2",
+  "title": "Manipulation of collateral-to-yang ratios due to reliance on ERC20 contract balance",
+  "issueId": 207,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/207"
+}
