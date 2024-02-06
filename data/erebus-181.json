@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "erebus",
+  "risk": "2",
+  "title": "Broken logic if users interact with the project directly and not via a smart contract (or AA)",
+  "issueId": 181,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/181"
+}
