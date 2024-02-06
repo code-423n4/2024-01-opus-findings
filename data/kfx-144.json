@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "kfx",
+  "risk": "3",
+  "title": "Redistribution can be used to force invalid oracle price updates to enter the system",
+  "issueId": 144,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/144"
+}
