@@ -1,0 +1,6 @@
+Firstly, the codebase is well written and there is clear definition of various modules. It is particularly impressive the way the protocol segregates different `yangs` to `gates` allowing each `yang` to have their own `gate. Additionally, from a security perspective the succinct nature of different modules in terms of their operations for example, the only entry point of users to the protocol is through the `abbot` module, and the `gate` module holds the `yang` value and there is a protection by the `sentinel` module. The clear separation of duties principle applied is good. 
+
+With that, there is a particular aspect that I think the project can consider, composability. The different modules need to interact in a way that does not create issues. For example,as submitted in my report, The `seer` module defines its own data validity bounds and so does `pragma` module. Interaction between these two modules can introduce an issue when the data validity thresholds are set without considering the other.It is therefore important to have more fuzzing and intergration tests to ensure the different modules are able to interact in a secure manner. Otherwise, it was a very tight codebase and well written. 
+
+### Time spent:
+25 hours
