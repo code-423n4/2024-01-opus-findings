@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "erebus",
+  "risk": "2",
+  "title": "Variation of inflation attack in `absorber` makes it possible for an attacker to start griefing users",
+  "issueId": 200,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/200"
+}
