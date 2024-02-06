@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "minhquanym",
+  "risk": "2",
+  "title": "Potential DOS when the number of redistributions is excessively large",
+  "issueId": 177,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/177"
+}
