@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "bin2chen",
+  "risk": "3",
+  "title": "pull_redistributed_debt_and_yangs() may get more yang than deserved.",
+  "issueId": 204,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/204"
+}
