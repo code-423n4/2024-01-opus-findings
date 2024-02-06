@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "Kaysoft",
+  "risk": "3",
+  "title": "A malicious user can steal the asset of another user that deposit to a trove directly from non contract address",
+  "issueId": 240,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/240"
+}
