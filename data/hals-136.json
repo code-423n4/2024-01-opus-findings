@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "hals",
+  "risk": "2",
+  "title": "`seer.update_prices` function might enforce updating to an invalid collateral prices and risking users troves health",
+  "issueId": 136,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/136"
+}
