@@ -21,6 +21,14 @@ I use the above-analyzing approach for each smart contract to ensure its securit
     
     - It refer to vulnerabilities and aspects that should be carefully addressed and taken into account when designing
     - These considerations aim to ensure the security, reliability, and robustness of a system.
+5.  **My Thoughts**
+    
+    - My thoughts about future of the this protocol
+6.  **Learnings**
+    
+    - Learnings from this protocol
+
+&nbsp;
 
 # 1\_ src/core/abbot.cairo
 
