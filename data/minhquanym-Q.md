@@ -7,7 +7,6 @@
 | L-3 | Changing the threshold could lead to trove liquidation |
 | L-4 | Interest is not accrued when Shrine is shutdown |
 | L-5 | Rebase tokens and fee-on-transfer tokens cannot be used as underlying assets for yang |
-| L-6 | Possible DOS when the number of redistributions are too large |
 | NC-1 | Missing NatSpec for most functions |
 
 
@@ -68,24 +67,6 @@ Similarly, with fee-on-transfer tokens, the actual amount of the deposited asset
 
 ## Recommendation
 Document and avoid using rebase and fee-on-transfer tokens as underlying assets in Opus.
-
----
-
-# L-6. Possible DOS when the number of redistributions are too large
-
-https://github.com/code-423n4/2024-01-opus/blob/04583e0411dbf8027952d668a8678fda0cb5b160/src/core/shrine.cairo#L2040
-
-## Details
-Each time users interact with their troves, the function `pull_redistributed_debt_and_yangs()` will be called to calculate how much debts and yangs are pulled after redistribution. The ways this function do is looping from the last redistribution of the trove to the current redistribution. In each redistribution, it loop through each yang. And for each yang, if it is exceptional redistribution, there will be another loop through all the yangs.
-
-So overall, worst case the complexity of the function is `O(n * m^2)` with n is the number of redistribution and m is number of yangs.
-
-In Starknet, there is a limit on how many Cairo steps can execute in 1 block. Currently, it is 10M steps on mainnet. https://docs.starknet.io/documentation/tools/limits_and_triggers/
-
-In case the number of redistribution become too large, the number of Cairo steps need to execute `pull_redistributed_debt_and_yangs()` will break the limit and cause DOS for users.
-
-## Recommendation
-Add another function to allow users to partial pull redistributed debts and yangs. For example, if there are 10 redistributions, users could pull 5 redistributions in 1 TX, and another 5 in the next transaction. However, all other actions are still only executed after all redistributions are pulled.
 
 ---
 
