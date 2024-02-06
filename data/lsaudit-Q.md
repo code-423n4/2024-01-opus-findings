@@ -78,7 +78,7 @@ However, since `multiplier == MAX_MULTIPLIER.into()` we can immediately return `
 
 Using `>=`/`<=` operators instead of `>`/`<` will save us from two additional comparisons (entering `else if` and `else` branch). This will increase the code readability and saves execution's costs (gas usage) for the end-user.
 
-# [4] Function `update_rate()` does not emit an event
+# [5] Function `update_rate()` does not emit an event
 
 **File:** `shrine.cairo`
 
@@ -90,7 +90,7 @@ It's a good practice to emit events whenever some important settings of the cont
 652:         fn update_rates(ref self: ContractState, yangs: Span<ContractAddress>, new_rates: Span<Ray>) { 
 ```
 
-# [5] Emit events at the end of the function
+# [6] Emit events at the end of the function
 
 **File:** `shrine.cairo`
 
@@ -110,7 +110,7 @@ Follow the Checks - Effects - Interactions pattern by emitting the events when t
 
 Please notice, that sometimes (to save gas) - it's better to emit an event before the operation which changes the state. However, this scenario does not occur in this example. Moreover, every other function in the protocol follows CEI pattern for emitting events (function executes some action and then emits an event). For the code readability, our recommendation is to stick to this pattern also in `update_yin_spot_price()`.
 
-# [6] Lack of `amount` value check in `withdraw()` and `deposit()` functions in `shrine.cairo`
+# [7] Lack of `amount` value check in `withdraw()` and `deposit()` functions in `shrine.cairo`
 
 **File:**  `shrine.cairo`
 
@@ -136,7 +136,7 @@ Whenever `amount` is set to `0`, the state of the contract won't be changed. Dep
 Verify if the `amount > 0` whenever calling either `deposit` or `withdraw`.
 
 
-# [9] Emits should emit both old and new values
+# [8] Emits should emit both old and new values
 
 **File:** `shrine.cairo`
 
@@ -151,7 +151,7 @@ Verify if the `amount > 0` whenever calling either `deposit` or `withdraw`.
 
 Function `update_yin_spot_price` updates the spot price of yin. While the price is updated, it's a good practice to emit both previous and new (updated) value. Event `YinPriceUpdated` emits only the new spot price value.
 
-# [10] Check `forge_amount` value in `open_trove()` in `abbot.cairo`
+# [9] Check `forge_amount` value in `open_trove()` in `abbot.cairo`
 
 **Files:** `abbot.cairo`, `shrine.cairo`
 
@@ -195,7 +195,7 @@ In function `open_trove` (`abbot.cairo`), call `self.shrine.read().forge(user, n
 In function `forge` (`shrine.cairo`), do not perform any action when `amount` is not greater than `0`.
 
 
-# [11] `new_trove_id` in `abbot.cairo` can be declared earlier
+# [10] `new_trove_id` in `abbot.cairo` can be declared earlier
 
 **File:** `abbot.cairo`
 
@@ -229,7 +229,7 @@ Since line `137` sets `troves_count` as `troves_count + 1`, which is basically t
 ```
 
 
-# [12] Function `unsuspend_yang` can be called even when Yang is not suspended
+# [11] Function `unsuspend_yang` can be called even when Yang is not suspended
 
 **File:** `shrine.cairo`
 
@@ -251,7 +251,7 @@ Function `unsuspend_yang()` checks only if status is not `YangSuspensionStatus::
 It's possible to call `unsuspend_yang()` even when it's not suspended (its status is `YangSuspensionStatus::None`). Calling `unsuspend_yang()` when Yang is not suspended still emits an `YangUnsuspended` event. This might be very misleading to the end-user. Make sure to fully verify the `self.get_yang_suspension_status(yang)` and do not allow to call `unsuspend_yang` when it is not suspended.
 
 
-# [13] Emit both old and new values
+# [12] Emit both old and new values
 
 **Files:** `shrine.cairo`, `controller.cairo`
 
@@ -328,7 +328,7 @@ Similar issues exist in the below instances. Functions emits only the new (updat
 
 
 
-# [14] Functions which update the value do not verify if the value was really changed
+# [13] Functions which update the value do not verify if the value was really changed
 
 **Files:** `shrine.cairo`, `controller.cairo`
 
@@ -416,7 +416,7 @@ The same issue occurs in multiple of instances:
 ```
 
 
-# [15] Lack of `address(0)` check in constructor
+# [14] Lack of `address(0)` check in constructor
 
 **Files:** `absorber.cairo`, `equalizer.cairo`, `caretaker.cairo`, `gate.cairo`, `purger.cairo`, `controller.cairo`, `abbot.cairo`, `flash_mint.cairo`
 
@@ -490,7 +490,7 @@ The same issue occurs in multiple of instances:
 147:         self.seer.write(ISeerDispatcher { contract_address: seer });
 ```
 
-# [16] Incorrect documentation
+# [15] Incorrect documentation
 
 ***File:*** `shrine.cairo`
 
@@ -508,7 +508,7 @@ As demonstrated above, function `inject()` cannot be called when Shrine is kille
 
 Our recommendation is to update the documentation - please add `inject()` function to the list of functions which cannot be called when the Shrine is killed.
 
-# [17] Incorrect punctuation
+# [16] Incorrect punctuation
 
 According to American style guides, `i.e.` should be followed by commna: `i.e.,`. The comma is missed in the below instances:
 
@@ -538,7 +538,7 @@ However, according to British style guids, `i.e.` should not be followed by comm
 
 Our recommendation is to stick to one style of punctuation in abbreviations.
 
-# [18] Typos
+# [17] Typos
 
 [File: absorber.cairo](https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/absorber.cairo#L434)
 ```
