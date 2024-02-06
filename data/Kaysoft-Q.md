@@ -146,3 +146,27 @@ Most functions will revert and be unusable because of the assumption that the to
 
 Recommendation:
 Consider implementing both snake-case and camel case integration for interoperability. The convention used by each token can be saved along with each trove data.
+
+## [L-6] Emit events for useful state update
+There are 5 instances of this.
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/abbot.cairo#L79C5-L82C6
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/abbot.cairo#L191C9-L212C10
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/absorber.cairo#L227C5-L236C6
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/equalizer.cairo#L84C5-L91C6
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/flash_mint.cairo#L66C5-L68C6
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/gate.cairo#L63C5-L69C6
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/sentinel.cairo#L99C5-L102C6
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/sentinel.cairo#L250C9-L269C10
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/transmuter.cairo#L174C5-L194C6
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/transmuter_registry.cairo#L65C9-L75C10
+- https://github.com/code-423n4/2024-01-opus/blob/4720e9481a4fb20f4ab4140f9cc391a23ede3817/src/core/transmuter_registry.cairo#L51C5-L53C6
+
+
+The construstors and some functions in the codebase update state without emitting events. For example in abbot.cairo, the contructor, deposit and withdraw functions update state without emitting events.
+
+Emiting events helps offchain monitoring tools like [Openzeppelin Defender Sentinel](https://www.openzeppelin.com/defender) monitor activities in order to detect unusual malicious contracts state updates.
+
+
+Recommendation:
+Consider emitting event for important state updates.
+ 
