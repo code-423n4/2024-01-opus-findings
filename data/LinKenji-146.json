@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "LinKenji",
+  "risk": "2",
+  "title": "Overly Strict Validation in Purger Leading to False Positives",
+  "issueId": 146,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/146"
+}
