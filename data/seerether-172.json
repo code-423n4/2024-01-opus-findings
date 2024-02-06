@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The melt() function in the Abbot contract allows anyone to repay a user's debt. ",
+  "issueId": 172,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/172"
+}
