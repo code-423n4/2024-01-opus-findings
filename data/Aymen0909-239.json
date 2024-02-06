@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "Aymen0909",
+  "risk": "2",
+  "title": "Trove owner will be unable to release deposited asset if someone deposits an asset for which the owner is blacklisted",
+  "issueId": 239,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/239"
+}
