@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "kfx",
+  "risk": "2",
+  "title": "By forcing the system to enter recovery mode, attacker can profit from liquidation previously healthy troves",
+  "issueId": 145,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/145"
+}
