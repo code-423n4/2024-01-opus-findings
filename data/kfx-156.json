@@ -1,0 +1,8 @@
+{
+  "contest": 319,
+  "handle": "kfx",
+  "risk": "2",
+  "title": "If just one of the tokens accepted as yang underlying tokens becomes non-transferable, recovery of all assets on system shutdown is going to fail",
+  "issueId": 156,
+  "issueUrl": "https://github.com/code-423n4/2024-01-opus-findings/issues/156"
+}
